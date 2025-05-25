@@ -1,12 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Vincent Sandrya - Personal Website</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JDDKQTEWVE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JDDKQTEWVE");
+    </script>
+
+    <style>
+      #root {
+        margin: 0px !important;
+        padding: 0px !important;
+        width: 100% !important;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f9fafb;
+        color: #1e293b;
+      }
+      /* Custom scrollbar for horizontal project cards */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Fix for timeline year circles */
+      ol.relative > li {
+        position: relative;
+        padding-left: 3rem;
+      }
+      ol.relative > li > span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+        background-color: #4f46e5; /* indigo-600 */
+        color: white;
+        font-weight: 700;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+        header > div:nth-child(2) {
+          max-width: 100%;
+        }
+        ol.relative > li > h3,
+        ol.relative > li > p {
+          margin-left: 2.75rem !important;
+        }
+        .scrollbar-hide {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+          margin-left: -1rem !important;
+          margin-right: -1rem !important;
+        }
+        main > section > div[aria-label="List of projects"] {
+          justify-content: center;
+        }
+        main > section > div[aria-label="List of projects"] > article {
+          width: 90vw !important;
+          max-width: 320px;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
